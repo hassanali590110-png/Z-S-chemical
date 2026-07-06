@@ -1,4 +1,4 @@
-﻿
+
 * {
     margin: 0;
     padding: 0;
@@ -40,11 +40,13 @@ nav a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    transition: .3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
     position: relative;
 }
 nav a:hover {
     color: gold;
+    transform: translateY(-3px);
 }
 nav a::after {
     content: "";
@@ -87,22 +89,22 @@ nav a:hover::after {
     margin-bottom: 30px;
 }
 .hero button {
-    background: linear-gradient(45deg,
-            #003366,
-            #0055aa);
+    background: linear-gradient(135deg, #003366, #0077cc);
     color: white;
     padding: 16px 35px;
     border: none;
     border-radius: 50px;
     font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-    transition: .4s;
+    transition: all 0.4s ease;
     margin-right: 15px;
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.3);
 }
 .hero button:hover {
-    transform: translateY(-8px);
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, .3);
+    transform: translateY(-6px) scale(1.05);
+    background: linear-gradient(135deg, #0055aa, #00aaff);
+    box-shadow: 0 15px 35px rgba(0, 85, 170, 0.5);
 }
 .hero-images {
     width: 50%;
@@ -145,19 +147,24 @@ nav a:hover::after {
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, .15);
-    transition: .3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    transform: translateY(0);
+    transition: all 0.4s ease;
     border: 1px solid rgba(255, 255, 255, .3);
     backdrop-filter: blur(10px);
 }
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+}
+.card:hover img {
+    transform: scale(1.1);
 }
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 .card h3 {
     color: #003366;
@@ -626,14 +633,7 @@ footer p {
     background: #0055aa;
     transform: translateY(-5px);
 }
-.product-card,
-.service-card,
-.industry-card,
-.why-card,
-.testimonial-card,
-.stat-card {
-    transition: .4s ease;
-}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -753,4 +753,19 @@ footer h3:hover {
 
 .product-card p {
     min-height: 95px;
+}
+section {
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
